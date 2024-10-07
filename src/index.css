@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the code editor */
+.editor-wrapper {
+  @apply flex flex-col h-full;
+}
+
+.editor-textarea {
+  @apply w-full h-full resize-none outline-none font-mono text-sm p-4;
+  background: transparent;
+  color: inherit; /* Inherit color from parent */
+  caret-color: currentColor;
+}
+
+.syntax-highlighter {
+  @apply absolute top-0 left-0 w-full h-full overflow-auto;
+  pointer-events: none;
+}
+
+/* Ensure proper styling for Prism.js syntax highlighting */
+pre[class*="language-"] {
+  @apply m-0 p-4 text-sm;
+}
+
+/* Scrollbar styling */
+.editor-wrapper ::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.editor-wrapper ::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+.editor-wrapper ::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded;
+}
+
+.editor-wrapper ::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Dark mode adjustments */
+.dark .editor-textarea {
+  caret-color: white;
+  color: white; /* Text color for dark mode */
+}
+
+.dark .syntax-highlighter pre[class*="language-"] {
+  @apply bg-gray-800 text-gray-200; /* Adjust text color for syntax highlighting */
+}
+
+.dark .editor-wrapper {
+  @apply bg-gray-900; /* Background for editor wrapper in dark mode */
+}
+
+.dark .editor-wrapper ::-webkit-scrollbar-track {
+  @apply bg-gray-700;
+}
+
+.dark .editor-wrapper ::-webkit-scrollbar-thumb {
+  @apply bg-gray-600;
+}
+
+.dark .editor-wrapper ::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Overall dark mode for the page */
+body.dark {
+  @apply bg-gray-900 text-white; /* Set body background and text color */
+}
