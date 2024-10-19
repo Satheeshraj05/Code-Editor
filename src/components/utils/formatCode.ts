@@ -11,6 +11,6 @@ export async function formatCode(code: string, language: string): Promise<string
         return Promise.resolve(formattedCode);
     } catch (error) {
         console.error('Error formatting code:', error);
-        return Promise.resolve(code);  // Return the original code in case of formatting failure
+        return Promise.resolve(code);  
     }
 }

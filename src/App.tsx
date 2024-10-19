@@ -23,7 +23,7 @@ export default function App() {
     } = useCodeEditor();
 
     return (
-        <div className={`min-h-screen ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+        <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
             <Header
                 language={language}
                 setLanguage={setLanguage}
@@ -40,6 +40,7 @@ export default function App() {
                     deleteFile={deleteFile}
                     openFile={openFile}
                     selectFile={selectFile}
+                    theme={theme}  // Pass theme to Sidebar
                 />
                 <Editor
                     code={code}
